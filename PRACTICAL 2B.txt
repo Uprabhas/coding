@@ -9,46 +9,60 @@ FullSlipstream-ENU-x86) are given in my previous post.
 Step 1:
 Open SQL Server Management Studio to restore backup file
 
- Step 2: Right click on Databases Restore Database
+Step 2: Right click on Databases Restore Database
+
 Step 3: Select Device click on ... icon towards end of device box 
+
 Step 4: Click on Add Select path of backup files
+
 Step 5: Select both files at a time
+
 Step 6 : Click ok and in select backup devices window Add both files of AdventureWorks
 
 Step 7: Open SQL Server Data Tools
 Select File New Project Business Intelligence Integration ServicesProject 
 & give appropriate project name.
 
-
 Step 8: Right click on Connection Managers in solution explorer and click on
 New Connection Manager.
 Add SSIS connection manager window appears.
+
 Step 9: Select OLEDB Connection Manager and Click on Add
+
 Step 10: Configure OLE DB Connection Manager window appears Click on
 New
+
 Step 11: Select Server name(as per your machine) from drop down and
 database name and click on Test connection.
 If test connection succeeded click on OK.
+
 Step 12: Click on OK
 Connection is added to connection manager
+
 Step 13: Drag and drop Data Flow Task in Control Flow tab
+
 Step 14: Drag OLE DB Source from Other Sources and drop into Data Flow
 tab
+
 Step 15: Double click on OLE DB source OLE DB Source Editor appears
 click on New to add connection manager.
 Select [Sales].[Store] table from drop down ok
+
 Step 16: Drag ole db destination in data flow tab and connect both
+
 Step 17: Double click on OLE DB destination
 Click on New to run the query to get [OLE DB Destination] in Name of thetable
 or the view.
 Click on ok
+
 Step 18: Click on start.
+
 Step 19: Go to SQL Server Management Studio
 In database tab Adventureworks Right click on [dbo].[OLE DB Destination]
 Scrip
 Table as SELECT To New Query Editor Window
-Step 20: Execute following query to get output.
 
+Step 20: Execute following query to get output.
 USE [AdventureWorks2012]
 GO
 SELECT [BusinessEntityID]
