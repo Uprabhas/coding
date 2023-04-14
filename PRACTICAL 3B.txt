@@ -1,0 +1,74 @@
+PRACTICAL 3B
+Create the cube with suitable dimension and fact tables based on 
+ROLAP, MOLAP and HOLAP model
+Step 1: Creating Data Warehouse
+Let us execute our T-SQL Script to create data warehouse with fact tables, 
+dimensions and populate them with appropriate test values.
+Follow the given steps to run the query in SSMS (SQL Server Management Studio).
+1. Open SQL Server Management Studio 2012
+2. Connect Database Engine
+Password for sa : 12345 (as given during installation)
+Click Connect.
+3. Go to the extracted sql file and double click on it.
+4. New Sql Query Editor will be opened containing Sales_DW Database.
+5. Click on execute or press F5 by selecting query one by one or directly click on 
+Execute.
+6. After completing execution save and close SQL Server Management studio & 
+Reopen to see Sales_DW in Databases Tab.
+
+Step 2: Start SSDT environment and create New Data Source
+Go to Sql Server Data Tools --> Right click and run as administrator
+Click on File → New → Project
+In Business Intelligence → Analysis Services Multidimensional and Data Mining 
+models → appropriate project name →click OK
+Right click on Data Sources in solution explorer → New Data Source
+Data Source Wizard appers
+Click on Next
+Select Server Name → select Use SQL Server Authentication → Select or enter a 
+database name (Sales_DW)
+Note : Password for sa : 12345 (as given during installation of SQL 2012 full 
+version)
+Click OK → Next
+Select Inherit → Next
+Click Finish
+Sales_DW.ds gets created under Data Sources in Solution Explorer.
+
+Step 3: Creating New Data Source View
+In Solution explorer right click on Data Source View Select New Data Source 
+View.
+Click Next
+Click Next
+Select FactProductSales(dbo) from Available objects and put in Includes Objects by 
+clicking on >
+Click on Add Related Tables
+Click Next.
+Click Finish.
+Sales DW.dsv appears in Data Source Views in Solution Explorer.
+
+Step 4: Creating new cube
+Right click on Cubes → New Cube → Next.
+Select Use existing tables in Select Creation Method → Next
+In Select Measure Group Tables → Select FactProductSales →Click Next
+In Select Measures → check all measures →Next.
+In Select New Dimensions → Check all Dimensions → Next
+Click on Finish
+Sales_DW.cube is created
+
+Step 5: Dimension Modification
+In dimension tab → Double Click Dim Product.dim → Drag and Drop Product 
+Name from Table in Data Source View and Add in Attribute Pane at left side
+
+Step 6: Creating Attribute Hierarchy in Date Dimension
+Double click On Dim Date dimension → Drag and Drop Fields from Table shown
+in Data Source View to Attributes→ Drag and Drop attributes from leftmost pane of 
+attributes to middle pane of Hierarchy.
+Drag fields in sequence from Attributes to Hierarchy window (Year, Quarter Name, 
+Month Name, Week of the Month, Full Date UK)
+
+Step 7: Deploy Cube
+Right click on Project name → Properties
+Deployment Successful.
+To process cube right click on Sales_DW.cube → Process
+Click run
+Browse the cube for analysis in solution explorer
+Check SQL Server that cube is displayed.
